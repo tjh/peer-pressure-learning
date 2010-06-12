@@ -1,2 +1,3 @@
 haml
 feedtools
+mongo_mapper
