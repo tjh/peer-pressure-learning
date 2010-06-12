@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %link{ :href => "/stylesheets/screen.css", :rel => "stylesheet", :media => "screen, projection", :type => "text/css" }
+    %link{ :href => "/stylesheets/print.css", :rel => "stylesheet", :media => "print", :type => "text/css" }
+    /[if IE 6]><link rel="stylesheet" type="text/css" href="/stylesheets/ie.css" /><![endif]
+  %body.bp.three-col
+    #container
+      = yield
