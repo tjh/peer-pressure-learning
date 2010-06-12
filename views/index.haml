@@ -1,7 +1,7 @@
 #header
   %h1 Peer Pressure Learning
   %hr
-  %h2.alt Friends helping each other learn something new every day for 30 days
+  %h3.alt Friends helping each other learn something new every day for 30 days
   %hr
 .span-7.colborder
   %h6
@@ -23,7 +23,15 @@
 .span-15.prepend-1.colborder
   
   / Put the RSS feed here from http://mileszs.com and http://timharvey.net
-  
+  - posts.each do |post|
+    %h2
+      %a{ :href => post.link }
+        = post.title
+    %h4.alt
+      Posted on
+      = post.posted_at.strftime("%b %d, %Y")
+    %p
+      = post.body.gsub " [...]", "..."
   %hr
 .span-7.last
   %h3

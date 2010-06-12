@@ -5,11 +5,11 @@ require 'haml'      # must be loaded after sinatra
 require 'sass'
 
 %w{
-mongo_connect
+connect
 models
 }.each { |f| load File.join(File.dirname(__FILE__), 'lib', "#{f}.rb") }
 
 get '/' do
-  @posts = Post.all
-  haml :index
+  posts = Post.all :order => "posted_at DESC"
+  haml :index, :locals => { :posts => posts }
 end
